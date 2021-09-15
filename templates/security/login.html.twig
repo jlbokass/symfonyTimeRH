@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta -->
+    <meta name="description" content="Responsive Bootstrap 4 Dashboard and Admin Template">
+    <meta name="author" content="ThemePixels">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.png">
+
+    <title>Time RH | Connexion</title>
+
+    <!-- vendor css -->
+    <link href="./lib/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="./lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+
+    <!-- template css -->
+    <link rel="stylesheet" href="./assets/css/cassie.css">
+
+</head>
+<body>
+
+<div class="signin-panel">
+    <!--  <svg-to-inline path="http://themepixels.me/cassie/assets/svg/citywalk.svg" class-Name="svg-bg"></svg-to-inline>-->
+    <img src="../assets/img/login.png" class-Name="svg-bg" class="img-fluid">
+
+    <div class="signin-sidebar">
+        <div class="signin-sidebar-body">
+            <a href="#" class="sidebar-logo mg-b-40"><span>Time RH</span></a>
+            <h4 class="signin-title">Connexion</h4>
+            <h5 class="signin-subtitle">Veuillez vous connecter pour continuer.</h5>
+
+            <div class="signin-form">
+                <form method="post">
+                    {% if error %}
+                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+
+                    {% if app.user %}
+                        <div class="mb-3">
+                            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                        </div>
+                    {% endif %}
+
+                    <div class="form-group">
+                        <label for="inputEmail">Votre Email</label>
+{#                        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Entrer votre email" >#}
+                        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputPassword" class="d-flex justify-content-between">
+                            <span>Mot de passe</span>
+                            <a href="" class="tx-13">Mot de passe oublié?</a>
+                        </label>
+{#                        <input type="password" class="form-control" placeholder="Enter your password" value="yourpassword">#}
+                        <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+                    </div>
+
+                    <input type="hidden" name="_csrf_token"
+                           value="{{ csrf_token('authenticate') }}"
+                    >
+
+
+{#                    Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.#}
+{#                    See https://symfony.com/doc/current/security/remember_me.html#}
+
+                    <div class="checkbox mb-3">
+                        <label>
+                            <input type="checkbox" name="_remember_me"> Se souvenir de moi
+                        </label>
+                    </div>
+
+
+                    <div class="form-group d-flex mg-b-0">
+                        <button class="btn btn-trh-blue btn-uppercase flex-fill" type="submit">Se connecter</button>
+                        <!--          <a href="page-signup.html" class="btn btn-white btn-uppercase flex-fill mg-l-10">Sign Up</a>-->
+                    </div>
+                </form>
+
+            </div>
+            <p class="mg-t-auto mg-b-0 tx-sm tx-color-03">En vous connectant, vous acceptez nos <a href="">Nos mentions
+                    légales</a>
+                et notre
+                <a href="">Politique de confidentialité</a> - <a href="#">FAQ</a></p>
+        </div><!-- signin-sidebar-body -->
+    </div><!-- signin-sidebar -->
+</div><!-- signin-panel -->
+
+
+
+{% block javascripts %}
+    <script src="{{ asset('lib/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('lib/feather-icons/feather.min.js') }}"></script>
+    <script src="{{ asset('lib/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+
+    <script>
+        $(function(){
+
+            'use strict'
+
+            feather.replace();
+
+            new PerfectScrollbar('.signin-sidebar', {
+                suppressScrollX: true
+            });
+
+        })
+    </script>
+    <script src="{{ asset('assets/js/svg-inline.js') }}"></script>
+
+{% endblock %}
+</body>
+</html>
+
+
+
+
+
+{#{% extends 'base.html.twig' %}#}
+
+{#{% block title %}Log in!{% endblock %}#}
+
+{#{% block body %}#}
+{#<form method="post">#}
+{#    {% if error %}#}
+{#        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>#}
+{#    {% endif %}#}
+
+{#    {% if app.user %}#}
+{#        <div class="mb-3">#}
+{#            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>#}
+{#        </div>#}
+{#    {% endif %}#}
+
+{#    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>#}
+{#    <label for="inputEmail">Email</label>#}
+{#    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>#}
+{#    <label for="inputPassword">Password</label>#}
+{#    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>#}
+
+{#    <input type="hidden" name="_csrf_token"#}
+{#           value="{{ csrf_token('authenticate') }}"#}
+{#    >#}
+
+
+{#        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.#}
+{#        See https://symfony.com/doc/current/security/remember_me.html#}
+
+{#        <div class="checkbox mb-3">#}
+{#            <label>#}
+{#                <input type="checkbox" name="_remember_me"> Remember me#}
+{#            </label>#}
+{#        </div>#}
+
+
+{#    <button class="btn btn-lg btn-primary" type="submit">#}
+{#        Sign in#}
+{#    </button>#}
+{#</form>#}
+{#{% endblock %}#}
