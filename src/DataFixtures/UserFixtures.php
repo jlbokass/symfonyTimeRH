@@ -40,7 +40,6 @@ class UserFixtures extends Fixture
         $user3->setFirstname('Appoline');
         $user3->setLastname('GRILLOT');
         $user3->setEmail('appoline@gmail.com');
-        $user3->setRoles(['ROLE_COLLABORATEUR']);
         $user3->setPassword($this->passwordHasher->hashPassword($user1, 'admin3'));
         $user3->setHolidays(200);
 
