@@ -7,9 +7,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @IsGranted("ROLE_MANAGER", "ROLE_GESTIONNAIRE")
- */
 class TempWorkersController extends AbstractController
 {
     /**
@@ -17,8 +14,16 @@ class TempWorkersController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('temp_workers/index.html.twig', [
-            'controller_name' => 'TempWorkersController',
-        ]);
+        return $this->render('temp_workers/index.html.twig');
+    }
+
+    /**
+     * @Route("/temp/workers/new", name="temp_workers_new")
+     *
+     * @return Response
+     */
+    public function new(): Response
+    {
+        return $this->render('temp_workers/new.html.twig');
     }
 }

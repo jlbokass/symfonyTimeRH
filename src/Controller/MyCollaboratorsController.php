@@ -7,9 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @IsGranted("ROLE_MANAGER", "ROLE_GESTIONNAIRE")
- */
+
 class MyCollaboratorsController extends AbstractController
 {
     /**

@@ -23,7 +23,7 @@ class UserFixtures extends Fixture
         $user1 = new User();
         $user1->setFirstname('Jean-Michel');
         $user1->setLastname('FRESNEL');
-        $user1->setEmail('j.michelfresnel@wanadoo.fr');
+        $user1->setEmail('Jean-Michel.Fresnel@BIOLANDES.com');
         $user1->setRoles(['ROLE_MANAGER']);
         $user1->setPassword($this->passwordHasher->hashPassword($user1, 'admin1'));
         $user1->setHolidays(188);
@@ -31,7 +31,7 @@ class UserFixtures extends Fixture
         $user2 = new User();
         $user2->setFirstname('Florent');
         $user2->setLastname('CASQUERO');
-        $user2->setEmail('casquero.florent@gmail.com');
+        $user2->setEmail('Florent.Casquero@BIOLANDES.com');
         $user1->setRoles(['ROLE_GESTIONNAIRE']);
         $user2->setPassword($this->passwordHasher->hashPassword($user1, 'admin2'));
         $user2->setHolidays(188);
@@ -39,7 +39,7 @@ class UserFixtures extends Fixture
         $user3 = new User();
         $user3->setFirstname('Appoline');
         $user3->setLastname('GRILLOT');
-        $user3->setEmail('appoline@gmail.com');
+        $user3->setEmail('Appolline.Grillot@BIOLANDES.com');
         $user3->setPassword($this->passwordHasher->hashPassword($user1, 'admin3'));
         $user3->setHolidays(200);
 
