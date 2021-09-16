@@ -22,7 +22,7 @@
                 <div class="dropdown-menu tx-14" aria-labelledby="ask-form" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;">
                     <a class="dropdown-item" href="form-vacation.html">Congés</a>
                     <a class="dropdown-item" href="form-vacation.html">RTT</a>
-                    <a class="dropdown-item" href="form-entry-and-validation.html">Demande RH</a>
+                    <a class="dropdown-item" href="{{ path('rh_request_new') }}">Demande RH</a>
                 </div>
             </div>
             <div class="dropdown">
@@ -62,6 +62,19 @@
                 </div><!-- col -->
             </div><!-- row -->
         </div>
+
+        {# read and display several types of flash messages #}
+        {% for label, messages in app.flashes(['success', 'warning']) %}
+            {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show mt-5 mb-5" role="alert">
+                    {{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+        {% endfor %}
+
         <div class="card mt-5">
             <div class="card-body">
                 <table class="table">

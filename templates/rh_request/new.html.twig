@@ -1,0 +1,320 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Formulaire demande RH {% endblock %}
+
+{% block body %}
+    <div class="content-header justify-content-between">
+        <div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ path('homepage') }}">Accueil</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><a href="{{ path('rh_request') }}">Mes demandes</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Saisie des demandes</li>
+                </ol>
+            </nav>
+            <h4 class="content-title content-title-xs">Saisie des demandes RH</h4>
+        </div>
+
+    </div><!-- content-header -->
+
+
+{#    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}#}
+{#    {{ form_widget(form) }}#}
+{#    <button type="submit">Go</button>#}
+{#    {{ form_end(form) }}#}
+
+
+    <div class="content-body">
+
+        <!-- acompte -->
+        <div class="card wd-sm-50p wd-md-40p mb-3 mx-auto">
+            {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'method' : 'POST'}}) }}
+                <div class="card-body">
+                    <div class="bg-warning">
+                        {{ form_errors(form) }}
+                    </div>
+                <!-- Acompte -->
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="advance-payment">
+                    <label class="custom-control-label" for="advance-payment">Acompte</label>
+                </div>
+
+                <div class="input-group mt-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Montant</span>
+                    </div>
+                    {{ form_widget(form.acompte, { 'attr' :
+                        {
+                            'class' : 'form-control',
+                            'aria-label' : 'Amount (to the nearest dollar)',
+                            'placeholder' : '00,00'
+                        }
+                    }) }}
+{#                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="00,00">#}
+                    <div class="input-group-append">
+                        <span class="input-group-text">€</span>
+                    </div>
+                </div><!--./ End of acompte -->
+
+                <!-- Attstation mutuelle -->
+                <div class="custom-control custom-checkbox mt-5">
+                    <input type="checkbox" class="custom-control-input" id="mutual-certificate">
+                    <label class="custom-control-label" for="mutual-certificate">Attestation de mutuelle</label>
+                </div>
+                <div class="input-group mt-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon2">Description</span>
+                    </div>
+                    {{ form_widget(form.attestationMutuelle, { 'attr' :
+                        {
+                            'class' : 'form-control',
+                            'aria-describedby' : 'basic-addon2',
+                            'aria-label' : 'amount',
+                            'placeholder' : '200 caratères maximum'
+                        }
+                    }) }}
+{#                    <input type="text" class="form-control" placeholder="200 caractères maximum" aria-label="amount" aria-describedby="basic-addon2">#}
+                </div><!--./ End of mutuelle -->
+
+                <!-- Attestation salaire -->
+                <div class="custom-control custom-checkbox mt-5">
+                    <input type="checkbox" class="custom-control-input" id="salary-certificate">
+                    <label class="custom-control-label" for="salary-certificate">Attestation salaire</label>
+                </div>
+                <div class="input-group mt-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">Description</span>
+                    </div>
+                    {{ form_widget(form.attestationSalaire, { 'attr' :
+                        {
+                            'class' : 'form-control',
+                            'aria-describedby' : 'basic-addon3',
+                            'aria-label' : 'amount',
+                            'placeholder' : '200 caratères maximum'
+                        }
+                    }) }}
+{#                    <input type="text" class="form-control" placeholder="200 caractère maximum" aria-label="amount" aria-describedby="basic-addon3">#}
+                </div><!--./ End of salaire -->
+
+                <!-- Attestation emploi -->
+                <div class="custom-control custom-checkbox mt-5">
+                    <input type="checkbox" class="custom-control-input" id="employment-certificate">
+                    <label class="custom-control-label" for="employment-certificate">Attestation d'emploi</label>
+                </div>
+                <div class="input-group mt-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon4">Description</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="200 caractère maximum" aria-label="amount" aria-describedby="basic-addon4">
+                </div><!--./ End of emploi -->
+
+                <!-- Attestation des jours travaillés -->
+                <div class="custom-control custom-checkbox mt-5">
+                    <input type="checkbox" class="custom-control-input" id="days-work-certificate">
+                    <label class="custom-control-label" for="days-work-certificate">Attestation des jours travaillés</label>
+                </div>
+                <div class="input-group mt-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon5">Description</span>
+                    </div>
+                    {{ form_widget(form.attestationJourTravaillees, { 'attr' :
+                        {
+                            'class' : 'form-control',
+                            'aria-describedby' : 'basic-addon5',
+                            'aria-label' : 'amount',
+                            'placeholder' : '200 caratères maximum'
+                        }
+                    }) }}
+{#                    <input type="text" class="form-control" placeholder="200 caractère maximum" aria-label="amount" aria-describedby="basic-addon5">#}
+                </div><!--./ End of jours travaillés -->
+
+                <!-- Attestation des jours travaillés -->
+                <div class="custom-control custom-checkbox mt-5">
+                    <input type="checkbox" class="custom-control-input" id="free-ask">
+                    <label class="custom-control-label" for="free-ask">Demande libre</label>
+                </div>
+                <div class="input-group mt-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon6">Description</span>
+                    </div>
+                    {{ form_widget(form.demandeLibre, { 'attr' :
+                        {
+                            'class' : 'form-control',
+                            'aria-describedby' : 'basic-addon2',
+                            'aria-label' : 'amount',
+                            'placeholder' : '200 caratères maximum'
+                        }
+                    }) }}
+{#                    <input type="text" class="form-control" placeholder="200 caractère maximum" aria-label="amount" aria-describedby="basic-addon6">#}
+                </div><!--./ End of jours travaillés -->
+
+                <!-- Duplicata de bulletin -->
+                <div class="custom-control custom-checkbox mt-5">
+                    <input type="checkbox" class="custom-control-input" id="duplicate-ballot">
+                    <label class="custom-control-label" for="duplicate-ballot">Duplicata de bulletin</label>
+                </div>
+
+                <!--               <div class="mt-3">-->
+                <!--                   <select class="form-control select2-no-search">-->
+                <!--                       <option label="Choose one"></option>-->
+                <!--                       <option value="Firefox">2021</option>-->
+                <!--                       <option value="Chrome">2020</option>-->
+                <!--                       <option value="Safari">2019</option>-->
+                <!--                       <option value="Opera">2018</option>-->
+                <!--                       <option value="Internet Explorer">2017</option>-->
+                <!--                   </select>-->
+                <!--               </div>-->
+
+                <div class="mt-3">
+                    <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle btn-block" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Choisir une ou plusieurs années
+                        </button>
+                        <div class="dropdown-menu tx-14" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -2px, 0px);">
+                            <form class="" action="">
+
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="2021">
+                                        <label class="custom-control-label" for="2021">2021</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox mt-3">
+                                        <input type="checkbox" class="custom-control-input" id="2020">
+                                        <label class="custom-control-label" for="2020">2020</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox mt-3">
+                                        <input type="checkbox" class="custom-control-input" id="2019">
+                                        <label class="custom-control-label" for="2019">2019</label>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-3">
+                    <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle btn-block" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Choisir un ou plusieurs mois
+                        </button>
+                        <div class="dropdown-menu tx-14" x-placement="top-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -2px, 0px);">
+                            <form class="" action="el-dropdown.html">
+
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="janvier">
+                                        <label class="custom-control-label" for="janvier">janvier</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox mt-3">
+                                        <input type="checkbox" class="custom-control-input" id="fevrier">
+                                        <label class="custom-control-label" for="fevrier">février</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox mt-3">
+                                        <input type="checkbox" class="custom-control-input" id="mars">
+                                        <label class="custom-control-label" for="mars">mars</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox mt-3">
+                                        <input type="checkbox" class="custom-control-input" id="avril">
+                                        <label class="custom-control-label" for="avril">avril</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox mt-3">
+                                        <input type="checkbox" class="custom-control-input" id="mai">
+                                        <label class="custom-control-label" for="mai">mai</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox mt-3">
+                                        <input type="checkbox" class="custom-control-input" id="juin">
+                                        <label class="custom-control-label" for="juin">juin</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox mt-3">
+                                        <input type="checkbox" class="custom-control-input" id="juillet">
+                                        <label class="custom-control-label" for="juillet">juillet</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox mt-3">
+                                        <input type="checkbox" class="custom-control-input" id="aout">
+                                        <label class="custom-control-label" for="aout">aout</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox mt-3">
+                                        <input type="checkbox" class="custom-control-input" id="septembre">
+                                        <label class="custom-control-label" for="septembre">septembre</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox mt-3">
+                                        <input type="checkbox" class="custom-control-input" id="octobre">
+                                        <label class="custom-control-label" for="octobre">octobre</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox mt-3">
+                                        <input type="checkbox" class="custom-control-input" id="novembre">
+                                        <label class="custom-control-label" for="novembre">novembre</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox mt-3">
+                                        <input type="checkbox" class="custom-control-input" id="decembre">
+                                        <label class="custom-control-label" for="decembre">décembre</label>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!--./ End duplicata de bulletin -->
+                    {{ form_row(form._token) }}
+
+                <div class="row mt-5">
+                    <div class="col-md-6">
+                        <button class="btn btn-trh-green btn-block" type="submit">Transmettre</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-warning btn-block" type="reset">Annulez</button>
+                    </div>
+                </div>
+
+            </div>
+            {{ form_end(form) }}
+        </div>
+
+
+    </div><!-- content-body -->
+{% endblock %}
+
+
+
