@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Visite médicale {% endblock %}
+
+{% block body %}
+    <div class="content-header justify-content-between">
+        <div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="homepage.html">Accueil</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Visite médicale</li>
+                </ol>
+            </nav>
+            <h4 class="content-title content-title-xs">Visite médicale</h4>
+        </div>
+        <div class="d-none d-sm-flex">
+            <a href="" class="btn btn-light"><i data-feather="print" class="svg-14"></i> Imprimer</a>
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Import / Export
+                </button>
+                <div class="dropdown-menu tx-14" aria-labelledby="dropdownMenuButton5" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 37px, 0px);">
+                    <a class="dropdown-item" href="#">Import</a>
+                    <a class="dropdown-item" href="#">Export</a>
+                </div>
+            </div>
+            <a href="form-medical-check-up.html" class="btn btn-light"><i data-feather="print" class="svg-14"></i> Saisie</a>
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Filtre par statut
+                </button>
+                <div class="dropdown-menu tx-14" aria-labelledby="dropleftMenuButton2" x-placement="left-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-2px, 0px, 0px);">
+                    <a class="dropdown-item" href="#">Apte</a>
+                    <a class="dropdown-item" href="#">Inapte</a>
+                </div>
+            </div>
+        </div>
+    </div><!-- content-header -->
+    <div class="content-body">
+        <div class=" no-code">
+            <h5 id="section7" class="tx-semibold">Filtre par date</h5>
+            <p class="mg-b-25">Sélectionnez la plage de dates à rechercher.</p>
+
+            <div class="row">
+                <div class="col-3">
+                    <input type="date" id="dateFrom" class="form-control hasDatepicker" placeholder="Du">
+                </div><!-- col -->
+                <div class="col-3">
+                    <input type="date" id="dateTo" class="form-control hasDatepicker" placeholder="Au">
+                </div><!-- col -->
+            </div><!-- row -->
+        </div>
+        <div class="card mt-5">
+            <div class="card-body">
+                <table class="table">
+                    <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Matricule</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prénom</th>
+                        <th scope="col">Service</th>
+                        <th scope="col">SST</th>
+                        <th scope="col">Date de visite</th>
+                        <th scope="col">Aptitude</th>
+                        <th scope="col">Date d'inaptitude</th>
+                        <th scope="col">Maladie pro.</th>
+                        <th scope="col">Reclassement</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">5426</th>
+                        <td>Dupond</td>
+                        <td>Paul</td>
+                        <td>Biolandes</td>
+                        <td>09/09/21</td>
+                        <td> 10/09/21 </td>
+                        <td>RH</td>
+                        <td>12/06/21</td>
+                        <td> Non </td>
+                        <td>BTS</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div><!-- content-body -->
+{% endblock %}

@@ -1,0 +1,231 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Ajout d'une fiche  {% endblock %}
+
+{% block body %}
+    <div class="content-header justify-content-between">
+        <div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="homepage.html">Accueil</a></li>
+                    <li class="breadcrumb-item" aria-current="page"><a href="page-temp-worker.html">Intérimaires</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Formulaire saisie fiche intérimaire</li>
+                </ol>
+            </nav>
+            <h4 class="content-title content-title-xs">Formulaire saisie fiche intérimaire</h4>
+        </div>
+
+    </div><!-- content-header -->
+    <div class="content-body">
+
+        <!-- acompte -->
+        <div class="card wd-sm-50p wd-md-40p mb-3 mx-auto">
+            <div class="card-body">
+
+                <!-- Nom -->
+                <div class="mt-3">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="lastname">Nom</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Nom..." aria-label="amount"
+                               aria-describedby="lastname">
+                    </div>
+                </div><!--./ End of name -->
+
+                <!-- Prenom -->
+                <div class="mt-3">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="firstname">Prénom</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Prénom..." aria-label="amount"
+                               aria-describedby="firstname">
+                    </div>
+                </div><!--./ End of firstname -->
+
+
+                <!-- Services -->
+                <div class="mt-3">
+                    <select class="form-control select2-no-search">
+                        <option label="sexe">Sexe</option>
+                        <option value="femme">Femme</option>
+                        <option value="homme">Homme</option>
+                    </select>
+                </div><!--./ End of services -->
+
+                <!-- Date de naissance -->
+                <div class="input-group mt-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon6">Date de naissance</span>
+                    </div>
+                    <input type="date" class="form-control" aria-label="amount"
+                           aria-describedby="basic-addon6">
+                </div><!--./ End of date de naissance -->
+
+                <!-- Date de naissance -->
+                <div class="input-group mt-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon64">Date d'entrée</span>
+                    </div>
+                    <input type="date" class="form-control" aria-label="amount"
+                           aria-describedby="basic-addon64">
+                </div><!--./ End of date de naissance -->
+
+                <!-- Services -->
+                <div class="mt-3">
+                    <select class="form-control select2">
+                        <option value="societe0">Société</option>
+                        <option value="societe1">Société 1</option>
+                        <option value="societe2">Société 2</option>
+                        <option value="societe3">Société 3</option>
+                    </select>
+                </div><!--./ End of services -->
+
+                <!-- Etablissement -->
+                <div class="mt-3">
+                    <select class="form-control select2">
+                        <option value="etab0">Etablissement</option>
+                        <option value="etab1">Etablissement 1</option>
+                        <option value="etab2">Etablissement 2</option>
+                        <option value="etab3">Etablissement 3</option>
+                    </select>
+                </div><!--./ End of etablissement -->
+
+                <!-- Catégorie -->
+                <div class="mt-3">
+                    <select class="form-control select2">
+                        <option value="cat0">Catégorie</option>
+                        <option value="cat1">Catégorie 1</option>
+                        <option value="cat2">Catégorie 2</option>
+                        <option value="cat3">Catégorie 3</option>
+                    </select>
+                </div><!--./ End of catégorie -->
+
+                <!-- Fonction -->
+                <div class="mt-3">
+                    <select class="form-control select2">
+                        <option value="fn0">Fonction</option>
+                        <option value="fn1">Fonction 1</option>
+                        <option value="fn2">Fonction 2</option>
+                        <option value="fn3">Fonction 3</option>
+                    </select>
+                </div><!--./ End of fonction -->
+
+                <!-- Département -->
+                <div class="mt-3">
+                    <select class="form-control select2">
+                        <option value="dep0">Département</option>
+                        <option value="dep">Département 1</option>
+                        <option value="dep">Département 2</option>
+                        <option value="dep3">Département 3</option>
+                    </select>
+                </div><!--./ End of fonction -->
+
+                <!-- Responsable service -->
+                <div class="mt-3">
+                    <select class="form-control select2">
+                        <option value="dep0">Responsable service</option>
+                        <option value="dep">Jean Dupond</option>
+                        <option value="dep">Jacque Bouvard</option>
+                        <option value="dep3">Nathalie Succau</option>
+                    </select>
+                </div><!--./ End of responsable service -->
+
+                <h5 class="mt-5">Saisie des dates</h5>
+
+                <!-- Date fiche de poste -->
+                <div class="input-group mt-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon87">Fiche de poste</span>
+                    </div>
+                    <input type="date" class="form-control" aria-label="amount"
+                           aria-describedby="basic-addon87">
+                </div><!--./ End of date fiche -->
+
+                <!-- Date entretien annuel -->
+                <div class="input-group mt-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon89">Entretien annuel</span>
+                    </div>
+                    <input type="date" class="form-control" aria-label="amount"
+                           aria-describedby="basic-addon89">
+                </div><!--./ End of date entretien annuel -->
+
+                <!-- Date entretien profetionnel -->
+                <div class="input-group mt-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon90">Entretien professionnel</span>
+                    </div>
+                    <input type="date" class="form-control" aria-label="amount"
+                           aria-describedby="basic-addon90">
+                </div><!--./ End of date entretien profetionnel -->
+
+                <!-- Date fiche compétence -->
+                <div class="input-group mt-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon45">Fiche compétence</span>
+                    </div>
+                    <input type="date" class="form-control" aria-label="amount"
+                           aria-describedby="basic-addon45">
+                </div><!--./ End fiche compétence -->
+
+                <h5 class="mt-5">Médecine du travail</h5>
+
+                <!-- Date visite -->
+                <div class="input-group mt-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon30">Date</span>
+                    </div>
+                    <input type="date" class="form-control" aria-label="amount"
+                           aria-describedby="basic-addon30">
+                </div><!--./ End fiche compétence -->
+
+                <!-- Maladie professionnelle -->
+                <div class="mt-3">
+                    <select class="form-control select2">
+                        <option value="type0">Type</option>
+                        <option value="type1">Type 1</option>
+                        <option value="type2">Type 2</option>
+                        <option value="type3">Type 3</option>
+                    </select>
+                </div><!--./ End of maladie professionnelle -->
+
+                <div class="row mt-3">
+                    <div class="col-4">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="night-work">
+                            <label class="custom-control-label" for="night-work">Travail de nuit</label>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="worker">
+                            <label class="custom-control-label" for="worker">Conducteur d'engin</label>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="work">
+                            <label class="custom-control-label" for="work">Travailleur handicapé</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-md-6">
+                        <a href="requests-transmitted.html" class="btn btn-trh-green btn-block">Transmettre</a>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-warning btn-block">Annulez</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div><!-- content-body -->
+
+{% endblock %}
+

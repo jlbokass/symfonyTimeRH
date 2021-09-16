@@ -1,0 +1,99 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Mes collaborateurs{% endblock %}
+
+{% block body %}
+    <div class="content-header justify-content-between">
+        <div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="homepage.html">Accueil</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Collaborateurs</li>
+                </ol>
+            </nav>
+            <h4 class="content-title content-title-xs mb-3">Collaborateurs</h4>
+        </div>
+
+        <div class="d-none d-sm-flex">
+            <div class="dropdown dropleft">
+                <button class="btn btn-light dropdown-toggle" type="button" id="dropleftMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Impression
+                </button>
+                <div class="dropdown-menu tx-14" aria-labelledby="dropleftMenuButton" x-placement="left-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-2px, 0px, 0px);">
+                    <a class="dropdown-item" href="#">Liste des collaborateurs</a>
+                    <a class="dropdown-item" href="#">Planning</a>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- content-header -->
+
+    <div class="content-body">
+
+        <!-- acompte -->
+        <h4 class="mb-3">Liste des collaborateurs</h4>
+        <table class="table">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Photo</th>
+                <th scope="col">Noms</th>
+                <th scope="col">Prénoms</th>
+                <th scope="col">Matricules</th>
+                <th scope="col">Qualité</th>
+                <th scope="col">Rôles Manager</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">
+                    <div class="dropdown">
+                        <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Actions
+                        </button>
+                        <div class="dropdown-menu tx-14" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 37px, 0px);">
+                            <a class="dropdown-item" href="#">Saisir une absence</a>
+                            <a class="dropdown-item" href="#">Voir son planning</a>
+                            <a class="dropdown-item" href="#">Saisir des variables</a>
+                        </div>
+                    </div>
+                </th>
+                <td><div class="avatar"><img src="https://picsum.photos/id/1025/200/300" class="rounded-circle" alt=""></div></td>
+                <td>Dupond</td>
+                <td>Eric</td>
+                <td>102454</td>
+                <td>Chef d'équipe</td>
+                <td>Vignette organigramme</td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <div class="dropdown">
+                        <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Actions
+                        </button>
+                        <div class="dropdown-menu tx-14" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 37px, 0px);">
+                            <a class="dropdown-item" href="#">Saisir une absence</a>
+                            <a class="dropdown-item" href="#">Voir son planning</a>
+                            <a class="dropdown-item" href="#">Saisir des variables</a>
+                        </div>
+                    </div>
+                </th>
+                <td><div class="avatar"><img src="https://picsum.photos/id/1025/200/300" class="rounded-circle" alt=""></div></td>
+                <td>Dupond</td>
+                <td>Eric</td>
+                <td>102454</td>
+                <td>Chef d'équipe</td>
+                <td>Vignette organigramme</td>
+            </tr>
+            </tbody>
+        </table>
+
+
+    </div><!-- content-body -->
+    <div class="container-fluid">
+        <h4 class="mt-4">Planning collaborateurs</h4>
+    </div>
+    <div class="content-body content-body-calendar">
+        <div id="calendar" class="content-calendar"></div>
+    </div><!-- content-body -->
+{% endblock %}
